@@ -1,1 +1,18 @@
 /react-ga-consent/node_modules
+/react-native-i18next/node_modules
+/react-native-i18next/script/secret.json
+node_modules/
+.expo/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+
+**/secret.json
