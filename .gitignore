@@ -15,4 +15,4 @@ web-build/
 # macOS
 .DS_Store
 
-**/secret.json
+secret.json
