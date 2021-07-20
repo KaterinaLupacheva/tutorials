@@ -1,5 +1,6 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 const secret = require("./secret.json");
+const fs = require("fs");
 
 const doc = new GoogleSpreadsheet(
   "1hDB6qlijcU5iovtSAisKqkcXhdVboFd1lg__maKwvDI"
@@ -33,11 +34,25 @@ const read = async () => {
       };
     });
   });
-  console.log(result);
+
   return result;
+};
+
+const write = (data) => {
+  Object.keys(data).forEach((key) => {
+    fs.writeFile(
+      `../translations/${key}.json`,
+      JSON.stringify(data[key], null, 2),
+      (err) => {
+        if (err) {
+          console.error(err);
+        }
+      }
+    );
+  });
 };
 
 init()
   .then(() => read())
-  //   .then((data) => write(data))
+  .then((data) => write(data))
   .catch((err) => console.log("ERROR!!!!", err));
