@@ -1,13 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import "./i18n.config";
+import { useTranslation } from "react-i18next";
+import LanguagePicker from "./LanguagePicker";
 
 export default function App() {
+  const { t } = useTranslation();
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello!</Text>
-      <Button title="Press" onPress={() => console.log("Pressed")} />
+      <LanguagePicker />
+      <Text style={styles.text}>{`${t("HELLO")}!`}</Text>
+      <Button title={t("PRESS")} onPress={() => Alert.alert(t("HELLO"))} />
       <StatusBar style="auto" />
     </View>
   );
