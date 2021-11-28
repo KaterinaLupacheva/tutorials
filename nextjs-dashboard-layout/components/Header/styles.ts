@@ -12,3 +12,12 @@ export const HeaderContainer = styled.header`
 export const TitleContainer = styled.div`
   margin: auto;
 `;
+
+export const IconContainer = styled.div`
+  padding: 10px;
+  cursor: pointer;
+
+  & svg {
+    height: 30px;
+  }
+`;

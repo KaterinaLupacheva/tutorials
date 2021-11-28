@@ -1,5 +1,9 @@
 import { SidebarContainer } from "./styles";
 
-export default function Sidebar() {
-  return <SidebarContainer>Menu</SidebarContainer>;
+type SidebarProps = {
+  isOpened: boolean;
+};
+
+export default function Sidebar({ isOpened }: SidebarProps) {
+  return <SidebarContainer isOpened={isOpened}>Menu</SidebarContainer>;
 }
